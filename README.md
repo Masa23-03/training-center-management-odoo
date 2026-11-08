@@ -44,7 +44,3 @@ krioza_training/
 ## Planned Development
 
 The project will be expanded throughout the course with Python models, XML views, menus, and training center functionality.
-
-## License
-
-LGPL-3.0, as declared in the module manifest.
