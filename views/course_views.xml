@@ -1,0 +1,78 @@
+<odoo>
+    <record id="view_krioza_course_list" model="ir.ui.view">
+        <field name="name">krioza.course.list</field>
+        <field name="model">krioza.course</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+                <field name="code" />
+                <field name="level" />
+                <field name="max_seats" />
+            </list>
+        </field>
+    </record>
+
+    <record id="view_krioza_course_form" model="ir.ui.view">
+        <field name="name">krioza.course.form</field>
+        <field name="model">krioza.course</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="image" widget="image" class="oe_avatar oe_right" nolabel="1" />
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Course Name" />
+
+                        </h1>
+                    </div>
+                    <div style="margin-top: 100px; margin-bottom: 100px;">
+                        <group>
+                            <group string="Course Details">
+                                <field name="code" />
+                                <field name="level" />
+
+                            </group>
+                            <group string="Course Planning">
+                                <field name="duration_hours" />
+                                <field name="max_seats" />
+
+                            </group>
+                        </group>
+
+                    </div>
+                    <div class="mt-5">
+                        <notebook>
+                            <page string="Description">
+                                <field name="description" nolabel="1" />
+
+                            </page>
+                        </notebook>
+
+                    </div>
+
+
+                </sheet>
+            </form>
+        </field>
+
+    </record>
+
+    <record id="action_krioza_courses" model="ir.actions.act_window">
+        <field name="name">Courses</field>
+        <field name="res_model">krioza.course</field>
+        <field name="view_mode">list,form</field>
+
+    </record>
+
+
+    <menuitem
+        id="menu_krioza_root"
+        name="Krioza Academy"
+    />
+    <menuitem
+        id="menu_krioza_courses"
+        name="Courses"
+        parent="menu_krioza_root"
+        action="action_krioza_courses"
+    />
+</odoo>
